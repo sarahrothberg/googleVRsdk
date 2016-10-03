@@ -3,8 +3,8 @@ using System.Collections;
 
 public class EnvironmentSwitcher : MonoBehaviour {
 
-	public GameObject[] scenes;
-	int currentSceneNumber;
+	public GameObject[] enviros;
+	int currentEnviroNum;
 
 	//to use this script with GVR pugin, attach it to a game object in the scene
 	//add an event trigger to the game object
@@ -15,14 +15,14 @@ public class EnvironmentSwitcher : MonoBehaviour {
 	//function below sets the first item in the array to active, and the others to inactive
 	//can be used to switch environments or simple switch in and out objects
 	//to use, attach to gameobject and drag the items you would like to switch onto the array
-	public void ChangeScenes(){
-		Debug.Log ("switched to" + currentSceneNumber);
-		scenes [currentSceneNumber].SetActive (false);
-		currentSceneNumber++;
-		if (currentSceneNumber == scenes.Length+1) {
-			currentSceneNumber = 0;
+	public void ChangeEnviro(){
+		Debug.Log ("switched to" + currentEnviroNum);
+		enviros [currentEnviroNum].SetActive (false);
+		currentEnviroNum++;
+		if (currentEnviroNum == enviros.Length+1) {
+			currentEnviroNum = 0;
 		}
-		scenes [currentSceneNumber].SetActive (true);
+		enviros [currentEnviroNum].SetActive (true);
 	}
 
 
